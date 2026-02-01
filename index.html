@@ -7,11 +7,11 @@
 </head>
 <body>
     
-    <div id="myDiv">Elemento com ID</div>
+    <div class="myClass">Elemento com Classe</div>
 
     <script>
-        const divElement = document.getElementById('myDiv');
-        console.log(divElement.textContent);
+        const elements = document.getElementsByClassName('myClass');
+        console.log(elements[1].textContent);
     </script>
 
 </body>
