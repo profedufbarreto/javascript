@@ -7,12 +7,13 @@
 </head>
 <body>
     
-    <div class="myClass">Elemento com Classe</div>
-
-    <script>
-        const elements = document.getElementsByClassName('myClass');
-        console.log(elements[1].textContent);
-    </script>
+<p>Parágrafo 1</p>
+<p>Parágrafo 2</p>
+<script>
+  const paragraphs = document.getElementsByTagName('p');
+  console.log(paragraphs.length); // Retorna: 2
+  console.log(paragraphs[0].textContent); // Retorna: "Parágrafo 1"
+</script>
 
 </body>
 </html>
