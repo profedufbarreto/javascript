@@ -7,12 +7,13 @@
 </head>
 <body>
     
-<p>Parágrafo 1</p>
-<p>Parágrafo 2</p>
+<ul>
+  <li>Item 1</li>
+  <li>Item 2</li>
+</ul>
 <script>
-  const paragraphs = document.getElementsByTagName('p');
-  console.log(paragraphs.length); // Retorna: 2
-  console.log(paragraphs[0].textContent); // Retorna: "Parágrafo 1"
+  const lisItems = document.querySelectorAll('li');
+  lisItems.forEach(item => console.log(item.textContent));
 </script>
 
 </body>
