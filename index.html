@@ -20,7 +20,9 @@
 
     if(username === '' || email === ''){
       alert('Por favor, preencha todos os campos.');
-    }
+      return false;
+    }else
+    return true;
   }
 </script>
 
