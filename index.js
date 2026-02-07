@@ -1,13 +1,8 @@
-const entrada = "SeGunDA";
-const dia = entrada.toLowerCase();
+let idade = 18;
+let titulo = 'sim';
 
-switch (dia){
-    case "segunda":
-        console.log("Segunda-feira");
-        break;
-    case "terça":
-        console.log("Terça-feira");
-        break;
-    default:
-        console.log("Valor inexistente.");
+if(idade >= 18 && titulo === "sim"){
+    console.log("Pode votar!");
+}else{
+    console.log("Não pode votar!");
 }
