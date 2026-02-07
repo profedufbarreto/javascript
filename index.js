@@ -1,4 +1,3 @@
-const num = 6;
-num = 2;
+let nome = "Eduardo";
 
-console.log(num);
+console.log("Meu nome é " + nome); //variável com aspas duplas.
