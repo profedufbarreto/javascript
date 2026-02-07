@@ -1,7 +1,5 @@
-let numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+let nomes = ["Eduardo", "Fernanda", "Tânia", "Mariana"];
 
-for(let i = 0; i <= 10; i++){
-    console.log(`Iterando ${i} vezes.`);
+for(let i = 0; i < 4; i++){
+    console.log(`Os nomes são ${nomes[i]}.`);
 }
-
-
