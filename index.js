@@ -1,6 +1,12 @@
-let num = 8;
+let num = 7;
 let valor = 19.99;
 
 let total = num * valor;
 
-console.log(`O valor total é de R$ ${total.toFixed(2)}`);
+if(total >= 150){
+    console.log(`O valor total é de R$ ${total.toFixed(2)}.`);
+    console.log("Gastos excessivos!!")
+}else{
+    console.log(`O valor total é de R$ ${total.toFixed(2)}`)
+    console.log('Gastos controlados.');
+}
