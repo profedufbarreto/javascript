@@ -1,5 +1,6 @@
-let nome = 'Eduardo';
+let num = 8;
+let valor = 19.90;
 
-console.log(`Meu nome é ${nome}!`);
-//fazendo o uso de crase. 
-//Com a crase você consegue usar a variável dentro do texto.
+let total = num * valor;
+
+console.log("O valor final é de R$ " + total);
