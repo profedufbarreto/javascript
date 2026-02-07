@@ -1,5 +1,5 @@
-let cidades = ["Montenegro", "Pareci Novo", "Capela de Santana", "São Sebastião do Caí"];
+let nome = "Eduardo";
 
-for(let cidade of cidades){
-    console.log(cidade);
+for(let letras of nome){
+    console.log(letras);
 }
