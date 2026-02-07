@@ -1,7 +1,5 @@
-let numero = 7;
+let cidades = ['Montenegro', 'Novo Hamburgo', 'Capela de Santana', 'Pareci Novo'];
 
-if(numero % 2 === 0){
-    console.log(`${numero} é par!`);
-}else{
-    console.log(`${numero} é ímpar!`);
+for(let i = 0; i < cidades.length; i++){
+    console.log(cidades[i]);
 }
