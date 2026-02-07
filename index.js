@@ -1,15 +1,11 @@
-const dia = "segunda";
+const entrada = "SeGunDA";
+const dia = entrada.toLowerCase();
 
 switch (dia){
-    case "Segunda":
     case "segunda":
-    case "SEGUNDA":
         console.log("Segunda-feira");
         break;
-    
-    case "Terça":
     case "terça":
-    case "TERÇA":
         console.log("Terça-feira");
         break;
     default:
