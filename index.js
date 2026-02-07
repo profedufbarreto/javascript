@@ -1,12 +1,17 @@
-let num = 7;
-let valor = 19.99;
+let idade = 38;
 
-let total = num * valor;
-
-if(total >= 150){
-    console.log(`O valor total é de R$ ${total.toFixed(2)}.`);
-    console.log("Gastos excessivos!!")
+if(idade < 0){
+    console.log('Idade inválida!');
+}else if(idade === 0){
+    console.log(`Criança de ${idade} anos, recém nascida.`);
+}else if(idade <= 5){
+    console.log(`Criança de ${idade} anos.`);
+}else if(idade <= 12){
+    console.log(`Pré-adolescente de ${idade} anos.`);
+}else if(idade <= 18){
+    console.log(`Adolescente de ${idade} anos.`);
+}else if(idade <=60){
+    console.log(`Adulto de ${idade} anos.`);
 }else{
-    console.log(`O valor total é de R$ ${total.toFixed(2)}`)
-    console.log('Gastos controlados.');
+    console.log(`Sênior de ${idade} anos.`);
 }
