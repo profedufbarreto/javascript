@@ -1,5 +1,7 @@
-function saudacao(nome){
-    console.log("Olá " + nome + " seja bem-vindo!");
+function soma(a, b){
+    return a + b;
 }
 
-saudacao("Eduardo");
+resultado = soma(4, 5);
+
+console.log(resultado);
