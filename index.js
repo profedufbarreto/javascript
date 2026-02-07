@@ -1,5 +1,7 @@
-let nomes = ["Eduardo", "Fernanda", "Tânia", "Mariana"];
+let numero = 7;
 
-for(let i = 0; i < 4; i++){
-    console.log(`Os nomes são ${nomes[i]}.`);
+if(numero % 2 === 0){
+    console.log(`${numero} é par!`);
+}else{
+    console.log(`${numero} é ímpar!`);
 }
