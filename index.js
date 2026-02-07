@@ -1,8 +1,10 @@
-let num = 4;
-let tab = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-let resultado;
+let num1 = 4;
+let num2 = 3;
+let nome = "Eduardo";
+let sobrenome = "Barreto";
 
-for(let i = 0; i < 10; i++){
-    resultado = num * tab[i];
-    console.log(`O resultado é ${resultado}.`);
-}
+let nomeCompleto = nome + " " + sobrenome;
+let soma = num1 + num2;
+
+console.log("O resultado da soma é: " + soma);
+console. log("Meu nome é " + nomeCompleto);
