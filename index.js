@@ -11,10 +11,14 @@ function mult(a, b){
 }
 
 function div(a, b){
-    return a / b;
+    if(b <= 0){
+       return "O dividor não pode ser menor ou igual a 0!";
+    }else{
+        return a / b;
+    }
 }
 
-opcao = 3;
+opcao = 4;
 
 switch(opcao){
     case 1:
@@ -31,7 +35,7 @@ switch(opcao){
         break;
     case 4:
         resultado = div(5, 5);
-        console.log(`O resultado é ${resultado}.`);
+        console.log(`O resultado é ${resultado}.`)
         break;
     default:
         console.log(`Valor inexistente!`);
