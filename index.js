@@ -1,7 +1,6 @@
-let anoNascimento = 1987;
-let anoAtual = 2026;
+let contador = 0;
 
-while(anoNascimento <= anoAtual){
-    console.log("...", anoNascimento);
-    anoNascimento++;
-}
+do{
+    console.log(`A bomba vai explodir em ${contador} segundos.`);
+    contador--;
+}while(contador >= 0);
