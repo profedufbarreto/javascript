@@ -1,8 +1,9 @@
-let num = 10;
-let contador = 1;
+let num = 1;
+let soma = 0;
 
-while(contador <= 10){
-    let tabuada = num * contador;
-    console.log(`O resultado da tabuada é ${tabuada}.`);
-    contador++;
+while(num < 100){
+    soma = soma + num;
+    console.log(soma);
+    num++;
+
 }
