@@ -1,6 +1,8 @@
-let contador = 0;
+let num = 10;
+let contador = 1;
 
-do{
-    console.log(`A bomba vai explodir em ${contador} segundos.`);
-    contador--;
-}while(contador >= 0);
+while(contador <= 10){
+    let tabuada = num * contador;
+    console.log(`O resultado da tabuada é ${tabuada}.`);
+    contador++;
+}
