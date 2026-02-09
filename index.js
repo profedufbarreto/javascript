@@ -1,14 +1,5 @@
-function soma(a, b){
-    return a + b;
-}
+let pessoa = {nome: "Eduardo", idade: 38, cidade: "Montenegro"};
 
-function apresentar(nome){
-    console.log(`Olá ${nome}!`);
-}
-
-nome = "Eduardo";
-
-resultado = soma(3, 5);
-
-console.log(resultado);
-apresentar("Eduardo");
+console.log(pessoa.nome);
+console.log(pessoa.idade);
+console.log(pessoa.cidade);
