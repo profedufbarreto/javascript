@@ -1,9 +1,14 @@
-let num = 1;
-let soma = 0;
-
-while(num < 100){
-    soma = soma + num;
-    console.log(soma);
-    num++;
-
+function soma(a, b){
+    return a + b;
 }
+
+function apresentar(nome){
+    console.log(`Olá ${nome}!`);
+}
+
+nome = "Eduardo";
+
+resultado = soma(3, 5);
+
+console.log(resultado);
+apresentar("Eduardo");
