@@ -5,7 +5,5 @@ let pessoas = [
 ];
 
 for(let pessoa of pessoas){
-    console.log(pessoa.nome);
-    console.log(pessoa.idade);
-    console.log(pessoa.cidade);
+    console.log(`${pessoa.nome} - ${pessoa.idade} - ${pessoa.cidade}`);
 }
