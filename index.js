@@ -1,9 +1,7 @@
-let pessoas = [
-    {nome: "Eduardo", idade: 38, cidade: "Monentegro"},
-    {nome: "Fernanda", idade: 46, cidade: "Montenegro"},
-    {nome: "Tânia", idade: 73, cidade: "Montenegro"}
-];
+let numeros = [1, 2, 3];
+numeros.push(4);
+numeros.push(5);
+numeros.push(soma = 4 + 3);
 
-for(let pessoa of pessoas){
-    console.log(`${pessoa.nome} - ${pessoa.idade} - ${pessoa.cidade}`);
-}
+
+console.log(numeros);
