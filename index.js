@@ -1,12 +1,15 @@
-class Pessoa{
-    constructor(nome, idade){
+class Animal{
+    constructor(nome){
         this.nome = nome;
-        this.idade = idade;
     }
-    falar(){
-        console.log(`Olá, meu nome é ${this.nome} e tenho ${this.idade} anos.`)
+    emitirSom(){
+        console.log("Som genérico..");
     }
 }
-
-const eduardo = new Pessoa("Eduardo", 38);
-eduardo.falar();
+class Cachorro extends Animal{
+    emitirSom(){
+        console.log("Au au!");
+    }
+}
+const dog = new Cachorro("Rex");
+dog.emitirSom();
