@@ -1,7 +1,12 @@
-let numeros = [1, 2, 3];
-numeros.push(4);
-numeros.push(5);
-numeros.push(soma = 4 + 3);
+class Pessoa{
+    constructor(nome, idade){
+        this.nome = nome;
+        this.idade = idade;
+    }
+    falar(){
+        console.log(`Olá, meu nome é ${this.nome} e tenho ${this.idade} anos.`)
+    }
+}
 
-
-console.log(numeros);
+const eduardo = new Pessoa("Eduardo", 38);
+eduardo.falar();
