@@ -3,23 +3,17 @@ class Animal{
         this.nome = nome;
     }
     emitirSom(){
-        console.log("Som genérico..");
+        console.log(`${this.nome} faz um som genérico..`);
     }
 }
+
 class Cachorro extends Animal{
     emitirSom(){
-        console.log("Au au!");
+        console.log(`${this.nome} diz: Au au!`);
     }
 }
+const rex = new Cachorro("Rex");
+rex.emitirSom();
 
-class Gato extends Animal{
-    emitirSom(){
-        console.log("Miau!");
-    }
-}
-
-const dog = new Cachorro("Rex");
-dog.emitirSom();
-
-const cat = new Gato("Lito");
-cat.emitirSom();
+const luna = new Cachorro("Luna");
+luna.emitirSom();
