@@ -1,5 +1,7 @@
-let num = 5;
+let tabuada = 6;
+let resultado;
 
-let resultado = num ** 2;
-
-console.log(resultado);
+for(let mult = 0; mult <= 10; mult++){
+    resultado = tabuada * mult;
+    console.log(`O resultado de ${mult} * ${tabuada} = ${resultado}.`);
+}
