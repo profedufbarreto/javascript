@@ -1,6 +1,4 @@
-let opcao = 1;
-
-switch(opcao){
+switch(new Date().getDay()){
     case 1:
         console.log("Segunda-feira");
         break;
