@@ -1,9 +1,6 @@
-let tabuada = 6;
-let mult = 0;
-let resultado;
+let i = 0;
 
-while(mult <= 10){
-    resultado = mult * tabuada;
-    console.log(`O resultado de ${mult} * ${tabuada} é: ${resultado}.`);
-    mult = mult + 1;
+while(i < 10){
+    console.log(`O número é ${i}`);
+    i++
 }
