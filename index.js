@@ -1,5 +1,8 @@
-let num1 = 5;
-let num2 = 3;
-let num3 = num1 + num2;
+const hora = 60;
 
-console.log(`O resultado de num3 é ${num3}.`)
+let minutos = 180;
+
+let tempo = minutos/hora;
+
+console.log("Total de: ", tempo, " horas!");
+ 
