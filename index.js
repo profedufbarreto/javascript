@@ -1,5 +1,7 @@
-let a = 5;
+let idade = 18;
 
-let b = ++a;
-
-console.log(`O valor de b agora é ${b}`);
+if(idade >= 18){
+    console.log(`Você tem ${idade} e é maior de idade!`);
+}else{
+    console.log(`Você tem ${idade} e é menor de idade!`);
+}
