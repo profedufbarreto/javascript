@@ -1,7 +1,8 @@
-let tabuada = 6;
-let resultado;
+let contador = 10;
 
-for(let mult = 0; mult <= 10; mult++){
-    resultado = tabuada * mult;
-    console.log(`O resultado de ${mult} * ${tabuada} = ${resultado}.`);
+while(contador >= 0){
+    console.log(`A bomba vai explodir em ${contador}`);
+    contador = contador - 1;
 }
+
+console.log("Explodiu!!");
