@@ -14,11 +14,15 @@
 <script>
   let text = "";
 
-  for(let i = 0; i < 5; i++){
-    text = text + "The number is " + i + "<br>";
+  let i = 0;
+
+  while(i < 10){
+    text += "The number is " + i + "<br>";
+    i++
   }
 
   document.getElementById("demo").innerHTML = text;
+
 </script>
 
 </body>
