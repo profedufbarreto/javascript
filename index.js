@@ -1,8 +1,4 @@
-let have8ram = true;
-let have128gb = true;
+let a = 10;
+let b = 4;
 
-if(have128gb === "true" && have8ram === "true"){
-    console.log("It is possible to install Linux");
-}else{
-    console.log("Isn't possible to install Linux.");
-}
+console.log(a >= 9 && b < 3);
