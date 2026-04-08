@@ -6,13 +6,20 @@
   <title>DOM</title>
 </head>
 <body>
-  
-  <p id="mensagem">Olá mundo</p>
 
+<h2>The for Loop</h2>
+
+<p id="demo"></p>
 
 <script>
-  let elemento = document.getElementById('mensagem');
-  console.log(document.textContent);
+  const cars = ["BMW", "Volvo", "Saab", "Ford", "Fiat", "Audi"];
+
+  let text = "";
+  for(let i = 0; i < cars.length; i++){
+    text += cars[i] + "<br>";
+  }
+
+  document.getElementById("demo").innerHTML = text;
 </script>
 
 </body>
