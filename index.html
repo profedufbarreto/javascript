@@ -4,28 +4,27 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DOM</title>
+  <style>
+    
+    #demo1{
+      color: red;
+    }
+
+  </style>
 </head>
 <body>
 
-<h2>The do.. while Loop</h2>
+  <h2>Testando coisas com DOM..</h2>
 
-<p id="demo"></p>
+  <p id="demo"></p>
+  <p id="demo1"></p>
 
-<script>
+  <script>
 
-  let text = "";
+    document.getElementById("demo").innerHTML = "Olá mundo!";
+    document.getElementById("demo1").innerHTML = "Meu nome é Eduardo!";
 
-  let i = 0;
-
-  do{
-    text += "<br>The number is " + i;
-    i++;
-  }
-  while(i < 10);
-
-  document.getElementById("demo").innerHTML = text;
-
-</script>
+  </script>
 
 </body>
 </html>
