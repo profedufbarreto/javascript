@@ -13,18 +13,21 @@
 
   <script>
 
-      function testScope(){
+      function predio(){
         if(true){
-          var foo = "Declarada com var";
-          let bar = "Declarada com let";
+          var crachaVar = "Acesso liberado pelo VAR";
+          let crachaLet = "Acesso liberado pelo LET";
         }
 
-        console.log(foo);
-        console.log(bar);
+        console.log(crachaVar);
+        console.log(crachaLet);
 
       }
 
-      testScope();
+      predio();
+
+      //let não consegue sair de nenhum {}
+      //enquanto o var consegue, ficando dentro da function
 
   </script>
 
