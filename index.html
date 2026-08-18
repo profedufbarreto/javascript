@@ -13,24 +13,18 @@
 
   <script>
 
-      var a = 1;
-      let b = 2;
-      const c = 3;
+      function testScope(){
+        if(true){
+          var foo = "Declarada com var";
+          let bar = "Declarada com let";
+        }
 
-      if(true){
-        var a = 10;
-        b = 20;
-        const c = 30;
+        console.log(foo);
+        console.log(bar);
+
       }
 
-      console.log(a);
-      console.log(b);
-      console.log(c);
-
-      //var aceita tanto reatribuição quanto a redeclaração
-      //let aceita apenas a reatribuição
-      //const não aceita nenhum dos dois
-
+      testScope();
 
   </script>
 
