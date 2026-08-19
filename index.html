@@ -13,27 +13,13 @@
 
   <script>
 
-      async function consultarCep(cep){
-        try{
-          const resposta = await fetch(`https://viacep.com.br/ws/${cep}/json/`);
+      const carro = {
+        marca: "Mitsubishi",
+        modelo: "L200",
+        ano: 2022
+      };
 
-          const dados = await resposta.json();
-
-          if(dados.erro){
-            console.log("CEP não encontrado.");
-            return;
-          }
-
-          console.log(`Logradouro: ${dados.logradouro}`);
-          console.log(`Bairro: ${dados.bairro}`);
-          console.log(`Cidade: ${dados.localidade}/${dados.uf}`);
-        
-        }catch(erro){
-          console.error("Erro ao consultar o CEP: ", erro);
-        }
-      }
-
-      consultarCep("01001000");
+      console.log(carro.modelo);
 
   </script>
 
