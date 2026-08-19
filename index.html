@@ -23,6 +23,15 @@
         console.log(`Produto: ${item.nome} - R$ ${item.preco}`);
       })
 
+      const produtosReajustados = produtos.map((item) => {
+        return{
+          nome: item.nome,
+          preco: (item.preco * 2)
+        };
+      });
+
+      console.log(produtosReajustados);
+
   </script>
 
   
