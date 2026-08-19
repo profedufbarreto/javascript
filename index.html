@@ -13,14 +13,15 @@
 
   <script>
 
-      const alunos = [
-        {nome: "Ana", nota: 8},
-        {nome: "Carlos", nota: 10},
-        {nome: "Juliana", nota: 4}
+      const produtos = [
+        {nome: "Teclado", preco: 150},
+        {nome: "Mouse", preco: 80},
+        {nome: "Monitor", preco: 900}
       ];
 
-      console.log(alunos[0]);
-      console.log(alunos[0].nome);
+      produtos.forEach((item) => {
+        console.log(`Produto: ${item.nome} - R$ ${item.preco}`);
+      })
 
   </script>
 
