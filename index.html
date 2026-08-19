@@ -13,24 +13,20 @@
 
   <script>
 
-      const produtos = [
-        {nome: "Teclado", preco: 150},
-        {nome: "Mouse", preco: 80},
-        {nome: "Monitor", preco: 900}
+      const nomes = [
+        {nome: "Miguel", sobrenome: "Arantes"},
+        {nome: "Joana", sobrenome: "Dark"},
+        {nome: "Paulo", sobrenome: "Raimundo"}
       ];
 
-      produtos.forEach((item) => {
-        console.log(`Produto: ${item.nome} - R$ ${item.preco}`);
-      })
-
-      const produtosReajustados = produtos.map((item) => {
+      const nomesAlterados = nomes.map((n) => {
         return{
-          nome: item.nome,
-          preco: (item.preco * 2)
+        nome: "Eduardo",
+        sobrenome: "Barreto"
         };
       });
 
-      console.log(produtosReajustados);
+      console.log(nomesAlterados);
 
   </script>
 
