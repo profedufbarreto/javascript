@@ -19,11 +19,16 @@
         {nome: "Paulo", sobrenome: "Raimundo"}
       ];
 
-      const nomesAlterados = nomes.map((n) => {
-        return{
-        nome: "Eduardo",
-        sobrenome: "Barreto"
-        };
+      const nomesAlterados = nomes.map((n, indice) => {
+        if(indice === 1){
+          return{
+            nome: "Eduardo",
+            sobrenome: "Barreto"
+          };
+        }
+      
+        return n;
+      
       });
 
       console.log(nomesAlterados);
