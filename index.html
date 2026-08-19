@@ -13,10 +13,14 @@
 
   <script>
 
-      const valores = [10, 20, 30];
-      const somaTotal = valores.reduce((acumulador, atual) => acumulador + atual, 0);
+      function calcularImposto(valor){
+        return valor * 0.15;
+      }
 
-      console.log(somaTotal);
+      const calcularImpostoImplicito = (valor) => valor * 0.15;
+
+      console.log(calcularImposto(400));
+      console.log(calcularImpostoImplicito(400));
 
   </script>
 
