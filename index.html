@@ -13,14 +13,27 @@
 
   <script>
 
-      function mult(a, b){
-        return a * b;
+      async function consultarCep(cep){
+        try{
+          const resposta = await fetch(`https://viacep.com.br/ws/${cep}/json/`);
+
+          const dados = await resposta.json();
+
+          if(dados.erro){
+            console.log("CEP não encontrado.");
+            return;
+          }
+
+          console.log(`Logradouro: ${dados.logradouro}`);
+          console.log(`Bairro: ${dados.bairro}`);
+          console.log(`Cidade: ${dados.localidade}/${dados.uf}`);
+        
+        }catch(erro){
+          console.error("Erro ao consultar o CEP: ", erro);
+        }
       }
 
-      const multiplicar = (a, b) => (a * b);
-
-      console.log(mult(3, 5));
-      console.log(multiplicar(3, 3));
+      consultarCep("01001000");
 
   </script>
 
