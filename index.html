@@ -13,22 +13,14 @@
 
   <script>
 
-    function calcularMedia(numeros){
-      if(numeros.length === 0) return 0;
-    
+      const aplicarDesconto = (preco, desconto = 0.10) => {
+        return preco - (preco * desconto);
+      };
 
-    let soma = 0;
+      console.log(aplicarDesconto(100));
+      console.log(aplicarDesconto(100, 0.20));
 
-    for(let i = 0; i < numeros.length; i++){
-      soma += numeros[i];
-    }
 
-    return soma / numeros.length;
-    }
-
-    console.log(calcularMedia([10, 8, 6, 4]));
-
-    
   </script>
   
 </body>
