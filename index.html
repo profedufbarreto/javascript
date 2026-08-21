@@ -3,31 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Aula 1 - Js Básiso</title>
+  <title>Aula JavaScript</title>
 
 </head>
 <body>
+  
+  <h1>Aula de JavaScript</h1>
 
-  <h1>Aula 1: Variáveis e tipos de dados</h1>
-  <p>Abra o Console (F12) para ver os resultados</p>
 
   <script>
 
-      const produtos = [
-        {nome: "Teclado", preco: 150},
-        {nome: "Mouse", preco: 80},
-        {nome: "Monitor", preco: 900}
-      ];
+    function somar(a, b){
+      return a + b;
+    }
 
-      const produtosBaratos = produtos.filter((item) => {
-        return item.preco <= 150;
-      });
 
-      console.log(produtosBaratos);
+    const somarArrow = (a, b) => a + b;
+
+    console.log(somar(10, 5));
+    console.log(somarArrow(12, 4));
 
   </script>
-
   
-
 </body>
 </html>
