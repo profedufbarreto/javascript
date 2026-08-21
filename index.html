@@ -13,13 +13,22 @@
 
   <script>
 
+    function calcularMedia(numeros){
+      if(numeros.length === 0) return 0;
     
-    const formatarNome = (nome, sobrenome) => {
-      return `${sobrenome.toUpperCase()}, ${nome}`;
+
+    let soma = 0;
+
+    for(let i = 0; i < numeros.length; i++){
+      soma += numeros[i];
     }
 
-    console.log(formatarNome("Eduardo", "Barreto"));
+    return soma / numeros.length;
+    }
 
+    console.log(calcularMedia([10, 8, 6, 4]));
+
+    
   </script>
   
 </body>
