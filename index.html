@@ -13,15 +13,14 @@
 
   <script>
 
-    function somar(a, b){
-      return a + b;
+    function ehPar(numero){
+      return numero % 2 === 0;
     }
 
+    const ehParArrow = numero => numero % 2 === 0;
 
-    const somarArrow = (a, b) => a + b;
-
-    console.log(somar(10, 5));
-    console.log(somarArrow(12, 4));
+    console.log(ehPar(5));
+    console.log(ehParArrow(3));
 
   </script>
   
