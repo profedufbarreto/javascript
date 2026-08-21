@@ -13,12 +13,18 @@
 
   <script>
 
-      const aplicarDesconto = (preco, desconto = 0.10) => {
-        return preco - (preco * desconto);
-      };
+      function somarTudo(...numeros){
+        let total = 0;
 
-      console.log(aplicarDesconto(100));
-      console.log(aplicarDesconto(100, 0.20));
+        for(let i = 0; i < numeros.length; i++){
+          total += numeros[i];
+        }
+
+        return total;
+      }
+
+      console.log(somarTudo(5, 10, 15));
+      console.log(somarTudo(2, 4, 6, 8, 10));
 
 
   </script>
