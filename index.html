@@ -13,14 +13,12 @@
 
   <script>
 
-    function ehPar(numero){
-      return numero % 2 === 0;
+    
+    const formatarNome = (nome, sobrenome) => {
+      return `${sobrenome.toUpperCase()}, ${nome}`;
     }
 
-    const ehParArrow = numero => numero % 2 === 0;
-
-    console.log(ehPar(5));
-    console.log(ehParArrow(3));
+    console.log(formatarNome("Eduardo", "Barreto"));
 
   </script>
   
