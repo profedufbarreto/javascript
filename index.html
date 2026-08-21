@@ -13,9 +13,17 @@
 
   <script>
 
-      for(let i = 0; i <= 5; i++){
-        console.log(i);
-      }
+      const produtos = [
+        {nome: "Teclado", preco: 150},
+        {nome: "Mouse", preco: 80},
+        {nome: "Monitor", preco: 900}
+      ];
+
+      const produtosBaratos = produtos.filter((item) => {
+        return item.preco <= 150;
+      });
+
+      console.log(produtosBaratos);
 
   </script>
 
