@@ -3,32 +3,33 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Aula 1 - Js Básiso</title>
+  <title>Aula JavaScript</title>
 
 </head>
 <body>
+  
+  <h1>Aula de JavaScript</h1>
 
-  <h1>Aula 1: Variáveis e tipos de dados</h1>
-  <p>Abra o Console (F12) para ver os resultados</p>
 
   <script>
 
-      function somarTudo(...numeros){
-        let total = 0;
-
-        for(let i = 0; i < numeros.length; i++){
-          total += numeros[i];
-        }
-
-        return total;
+      function exibirAprovados(listaAlunos){
+        listaAlunos.forEach(aluno => {
+          if(aluno.nota >= 7.0){
+            console.log(`${aluno.nome} foi aprovado(a) com nota ${aluno.nota}`);
+          }
+        });
       }
 
-      console.log(somarTudo(5, 10, 15));
-      console.log(somarTudo(2, 4, 6, 8, 10));
+      const alunos = [
+        {nome: "Ana", nota: 8.5},
+        {nome: "Bruno", nota: 5.0},
+        {nome: "Carla", nota: 7.0}
+      ];
+
+      exibirAprovados(alunos);
 
   </script>
-
   
-
 </body>
 </html>
