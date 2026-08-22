@@ -13,17 +13,18 @@
 
   <script>
 
-      const produtos = [
-        {nome: "Teclado", preco: 150},
-        {nome: "Mouse", preco: 80},
-        {nome: "Monitor", preco: 900}
-      ];
+      function somarTudo(...numeros){
+        let total = 0;
 
-      const produtosBaratos = produtos.filter((item) => {
-        return item.preco <= 150;
-      });
+        for(let i = 0; i < numeros.length; i++){
+          total += numeros[i];
+        }
 
-      console.log(produtosBaratos);
+        return total;
+      }
+
+      console.log(somarTudo(5, 10, 15));
+      console.log(somarTudo(2, 4, 6, 8, 10));
 
   </script>
 
