@@ -10,46 +10,39 @@
   
   <h2>DOM = Document Object!</h2>
 
-    <input type="number" name="nota1" id="nota1" min="0" max="10" placeholder="Digite a Nota 1">
-    <br><br>
-    <input type="number" name="nota2" id="nota2" min="0" max="10" placeholder="Digite a Nota 2">
+    <input type="number" id="campo-idade" min="0" max="120" placeholder="Digite sua idade: ">
     <br><br>
 
-    <button id="btnCalcular">Calcular Média</button>
+    <button id="btnVerificar">Verificar</button>
 
-    <h3 id="txtMedia">Média: -</h3>
-    <h3 id="txtSituacao">Situação: -</h3>
+    <h3 id="txt-resultado">Resultado: -</h3>
 
   <script>
 
-       const campoNota1 = document.getElementById("nota1");
-       const campoNota2 = document.getElementById("nota2");
-       const botao = document.getElementById("btnCalcular");
-       const txtMedia = document.getElementById("txtMedia");
-       const txtSituacao = document.getElementById("txtSituacao");
+    const campoIdade = document.getElementById("campo-idade");
+    const btnVerificar = document.getElementById("btnVerificar");
+    const txtResultado = document.getElementById("txt-resultado");
 
-       function processarMedia(){
-          const n1 = Number(campoNota1.value);
-          const n2 = Number(campoNota2.value);
+      function verificarVoto(){
+        const idade = Number(campoIdade.value);
 
-          if(n1 < 0 || n1 > 10 || n2 < 0 || n2 > 10){
-            txtSituacao.innerText = "Erro: Digite apenas notas entre 0 e 10!";
-            txtMedia.innerText = "Média: -";
-            return;
-          }
+        if(idade < 0 || campoIdade.value === ""){
+          txtResultado.innerText = "Por favor, digite uma idade válida!";
+          return;
+        }
 
-          const media = (n1 + n2) / 2;
+        if(idade < 16){
+          txtResultado.innerText = "Resultado: Não pode votar.";
+        }else if((idade >= 16 && idade <= 17) || idade >= 70){
+          txtResultado.innerText = "Resultado: Voto opcional.";
+        }else{
+          txtResultado.innerText = "Resultado: Voto Obrigatório!";
+        }
 
-          txtMedia.innerText = `Média: ${media}`;
+      }
 
-          if(media >= 7.0){
-            txtSituacao.innerText = "Situação: Aprovado(a)";
-          }else{
-            txtSituacao.innerText = "Situação: Reprovado(a)";
-          }
-       }
-
-       botao.addEventListener("click", processarMedia);
+      btnVerificar.addEventListener("click", verificarVoto);
+      
 
   </script>
   
