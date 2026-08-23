@@ -11,23 +11,17 @@
   <h1>Aula de JavaScript</h1>
 
 
+  <div id="caixaTexto"></div>
+  <div id="caixaHtml"></div>
+
   <script>
 
-      function exibirAprovados(listaAlunos){
-        listaAlunos.forEach(aluno => {
-          if(aluno.nota >= 7.0){
-            console.log(`${aluno.nome} foi aprovado(a) com nota ${aluno.nota}`);
-          }
-        });
-      }
+      const caixaTexto = document.getElementById("caixaTexto");
+      const caixaHtml = document.getElementById("caixaHtml");
 
-      const alunos = [
-        {nome: "Ana", nota: 8.5},
-        {nome: "Bruno", nota: 5.0},
-        {nome: "Carla", nota: 7.0}
-      ];
+      caixaTexto.innerText = "<h3>Mensagem como texto</h3>";
 
-      exibirAprovados(alunos);
+      caixaHtml.innerHTML = "<h3>Mensagem como cabeçalho!</h3>";
 
   </script>
   
