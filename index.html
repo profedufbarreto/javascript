@@ -3,25 +3,42 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Aula JavaScript</title>
+  <title>Aula JavaScript - Prática de Eventos DOM</title>
 
 </head>
 <body>
   
-  <h1>Aula de JavaScript</h1>
+  <h2>Boas-vindas personalizadas</h2>
 
+  <input type="text" name="campoNome" id="campoNome" placeholder="Digite seu nome">
+  <button id="btnEnviar">Confirmar</button>
 
-  <div id="caixaTexto"></div>
-  <div id="caixaHtml"></div>
+  <p id="mensagem">Aguardando entrada...</p>
 
   <script>
 
-      const caixaTexto = document.getElementById("caixaTexto");
-      const caixaHtml = document.getElementById("caixaHtml");
+      const inputNome = document.getElementById("campoNome");
+      const botao = document.getElementById("btnEnviar");
+      const textoMensagem = document.getElementById("mensagem");
 
-      caixaTexto.innerText = "<h3>Mensagem como texto</h3>";
+      botao.addEventListener("click", () => {
+        const nomeDigitado = inputNome.value.trim();
 
-      caixaHtml.innerHTML = "<h3>Mensagem como cabeçalho!</h3>";
+        if(nomeDigitado === ""){
+          textoMensagem.innerText = "Por favor, informe um nome válido.";
+        }else{
+          textoMensagem.innerText = `Olá, ${nomeDigitado}! Seja bem-vindo!`;
+          inputNome.value = "";
+        }
+      });
+
+      inputNome.addEventListener("keyup", (event) => {
+        if(event.key === "Enter") {
+          botao.click();
+        }
+      });
+
+
 
   </script>
   
