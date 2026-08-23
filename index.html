@@ -32,6 +32,12 @@
           const n1 = Number(campoNota1.value);
           const n2 = Number(campoNota2.value);
 
+          if(n1 < 0 || n1 > 10 || n2 < 0 || n2 > 10){
+            txtSituacao.innerText = "Erro: Digite apenas notas entre 0 e 10!";
+            txtMedia.innerText = "Média: -";
+            return;
+          }
+
           const media = (n1 + n2) / 2;
 
           txtMedia.innerText = `Média: ${media}`;
