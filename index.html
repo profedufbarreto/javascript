@@ -14,13 +14,20 @@
   <br><br>
   <input type="number" id="num2" placeholder="Número 2">
 
+
   <br><br>
   <button id="btnSomar">Somar</button>
   <br><br>
   <button id="btnSubtrair">Subtrair</button>
+  <br><br>
+  <button id="btnMultiplicar">Multiplicar</button>
+  <br><br>
+  <button id="btnDividir">Dividir</button>
 
-  <h3 id="somar">Resultado: 0</h3>
-  <h3 id="subtrair">Resultado: 0</h3>
+  <h3 id="somar">Soma: 0</h3>
+  <h3 id="subtrair">Subtração: 0</h3>
+  <h3 id="multiplicar">Multiplicação: 0</h3>
+  <h3 id="dividir">Divisão: 0</h3>
 
   <script>
 
@@ -28,8 +35,13 @@
       const campo2 = document.getElementById("num2");
       const botaoSomar = document.getElementById("btnSomar");
       const botaoSubtrair = document.getElementById("btnSubtrair");
+      const botaoMultiplicar = document.getElementById("btnMultiplicar");
+      const botaoDividir = document.getElementById("btnDividir");
       const textoSomar = document.getElementById("somar");
       const textoSubtrair = document.getElementById("subtrair");
+      const textoMultiplicar = document.getElementById("multiplicar");
+      const textoDividir = document.getElementById("dividir");
+
 
       function somarValores(){
         const n1 = Number(campo1.value);
@@ -50,10 +62,32 @@
         textoSubtrair.innerText = `Resultado: ${subtrair}`;
       }
 
+      function multiplicarValores(){
+        const n1 = Number(campo1.value);
+        const n2 = Number(campo2.value);
+
+        const multiplicar = n1 * n2;
+
+        textoMultiplicar.innerText = `Resultado: ${multiplicar}`;
+      }
+
+      function dividirValores(){
+        const n1 = Number(campo1.value);
+        const n2 = Number(campo2.value);
+
+        const dividir = n1 / n2;
+
+        textoDividir.innerText = `Resultado: ${dividir}`;
+      }
+
 
       botaoSomar.addEventListener("click", somarValores);
 
       botaoSubtrair.addEventListener("click", subtrairValores);
+
+      botaoMultiplicar.addEventListener("click", multiplicarValores);
+
+      botaoDividir.addEventListener("click", dividirValores);
 
   </script>
   
