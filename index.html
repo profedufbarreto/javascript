@@ -23,7 +23,47 @@
 
 <script>
 
-    
+    class Produtos{
+      #preco;
+
+      constructor(nome, preco){
+        this.nome = nome;
+        this.#preco = preco;
+      }
+
+      calcularPrecoFinal(porcentagemImposto){
+        const imposto = this.#preco * (porcentagemImposto / 100);
+        const precoFinal = this.#preco + imposto;
+        return `Produto: ${this.nome} | Preço Final (${porcentagemImposto}% imposto): R$ ${precoFinal.toFixed(2)}`;
+      }
+    }
+
+    const campoNome = document.getElementById("campoNome");
+    const campoPreco = document.getElementById("campoPreco");
+    const txtResultado = document.getElementById("txtResultado");
+
+    // 3. ARROW FUNCTION QUE PROCESSA O CÁLCULO
+    const processarCalculo = (porcentagem) => {
+      const nome = campoNome.value;
+      const preco = Number(campoPreco.value);
+
+      if (nome === "" || campoPreco.value === "" || preco <= 0) {
+        txtResultado.innerText = "Preencha o nome e o preço corretamente!";
+        return;
+      }
+
+      // Instancia o objeto da classe Produto
+      const item = new Produto(nome, preco);
+
+      // Atualiza a tela chamando o método da classe
+      txtResultado.innerText = item.calcularPrecoFinal(porcentagem);
+    };
+
+    // 4. EVENTOS (Passando parâmetros via Arrow Function anônima)
+    document.getElementById("btnAlimentos").addEventListener("click", () => processarCalculo(5));
+    document.getElementById("btnEletronicos").addEventListener("click", () => processarCalculo(15));
+    document.getElementById("btnLuxo").addEventListener("click", () => processarCalculo(30));
+
 
 </script>
 </body>
