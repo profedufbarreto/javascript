@@ -8,67 +8,21 @@
 </head>
 <body>
 
-    <h2>Conta Bancária Simples</h2>
+    <h2>Conversor de Celsius para Fahrenheit</h2>
 
-    <h3 id="txtSaldo">Saldo Atual: R$ 0.00</h3>
-
-    <input type="number" id="campoValor" placeholder="Valor (R$)">
+    <input type="number" name="campoCelsius" id="campoCelsius" placeholder="Temperatura em °C">
     <br><br>
 
-    <button id="btnDepositar">Depositar</button>
-    <button id="btnSacar">Sacar</button>
+    <button id="btnTradicional">Converter (Função Normal)</button>
 
-    <p id="txtMensagem"></p>
+    <button id="btnArrow">Converter (arrow function)</button>
+
+    <h3 id="txtResultado">Resultado: -</h3>
   
 
 <script>
 
-    class ContaBancaria{
-      constructor(saldoInicial){
-        this.saldo = saldoInicial;
-      }
-
-      depositar(valor){
-        if(valor <= 0) return "Valor de deposíto inválido!";
-        this.saldo += valor;
-        return `Depósito de R$ ${valor.toFixed(2)} realizado!`;
-      }
-
-      sacar(valor){
-        if(valor <= 0) return "Valor de saque inválido!";
-        if(valor > this.saldo) return "Saldo insuficiente!";
-        this.saldo -= valor;
-        return `Saque de R$ ${valor.toFixed(2)} realizado!`;
-      }
-    }
-
-    const minhaConta = new ContaBancaria(100);
-
-    const txtSaldo = document.getElementById("txtSaldo");
-    const campoValor = document.getElementById("campoValor");
-    const btnDepositar = document.getElementById("btnDepositar");
-    const btnSacar = document.getElementById("btnSacar");
-    const txtMensagem = document.getElementById("txtMensagem");
-
-    txtSaldo.innerText = `Saldo Atual: R$ ${minhaConta.saldo.toFixed(2)}`;
-
-    btnDepositar.addEventListener("click", () => {
-      const valor = Number(campoValor.value);
-      const mensagem = minhaConta.depositar(valor);
-
-      txtMensagem.innerText = mensagem;
-      txtSaldo.innerText = `Saldo Atual: R$ ${minhaConta.saldo.toFixed(2)}`;
-      campoValor.value = "";
-    });
-
-    btnSacar.addEventListener("click", () => {
-      const valor = Number(campoValor.value);
-      const mensagem = minhaConta.sacar(valor);
-
-      txtMensagem.innerText = mensagem;
-      txtSaldo.innerText = `Saldo Atual: R$ ${minhaConta.saldo.toFixed(2)}`;
-      campoValor.value = "";
-    });
+    
 
 </script>
 </body>
