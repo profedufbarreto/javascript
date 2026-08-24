@@ -3,48 +3,86 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Aula JavaScript - Prática de Eventos DOM</title>
-
+  <link rel="stylesheet" href="index.css">
+  <title>Simulador de Empréstimo</title>
 </head>
 <body>
-  
-  <h2>DOM = Document Object!</h2>
 
-    <input type="number" id="campo-idade" min="0" max="120" placeholder="Digite sua idade: ">
-    <br><br>
+  <div class="container">
+    <h2>Simulador de Emprestímo</h2>
 
-    <button id="btnVerificar">Verificar</button>
+    <div class="form-group">
+      <label for="campo-valor">Valor do Empréstimo</label>
+      <input type="number" name="campo-valor" id="campo-valor" placeholder="Ex: 5000">
+    </div>
 
-    <h3 id="txt-resultado">Resultado: -</h3>
+    <div class="form-group">
+      <label for="campo-parcelas">Quantidade de Parcelas</label>
+      <input type="number" id="campo-parcelas" placeholder="Ex: 12">
+    </div>
+
+    <div class="form-group">
+      <label for="campo-renda">Sua renda mensal (R$)</label>
+      <input type="numb" id="campo-renda" placeholder="Ex: 3000">
+    </div>
+
+    <button id="btn-calcular">Simular Empréstimo</button>
+
+    <div class="resumo">
+      <h3>Resumo de simulações</h3>
+      <p id="txt-total">Valor total com juros: R$ 0,00</p>
+      <p id="txt-parcela">Valor da parcela: R$ 0,00</p>
+    
+          <div id="status-box">
+          Aguardando simulação..
+          </div>
+    </div>
+
+  </div>
 
   <script>
+   
+      const campoValor = document.getElementById("campo-valor");
+      const campoParcelas = document.getElementById("campo-parcelas");
+      const campoRenda = document.getElementById("campo-renda");
+      const btnCalcular = document.getElementById("btn-calcular");
 
-    const campoIdade = document.getElementById("campo-idade");
-    const btnVerificar = document.getElementById("btnVerificar");
-    const txtResultado = document.getElementById("txt-resultado");
+      const txtTotal = document.getElementById("txt-total");
+      const txtParcela = document.getElementById("txt-parcela");
+      const statusBox = document.getElementById("status-box");
 
-      function verificarVoto(){
-        const idade = Number(campoIdade.value);
+      function calcularEmprestimo(){
+        const valor = Number(campoValor.value);
+        const parcelas = Number(campoParcelas.value);
+        const renda = Number(campoRenda.value);
 
-        if(idade < 0 || campoIdade.value === ""){
-          txtResultado.innerText = "Por favor, digite uma idade válida!";
+        if(valor <= 0 || parcelas <= 0 || renda <= 0){
+          statusBox.innerText = "Por favor, preencha todos os campos!";
+          statusBox.style.backgroundColor = "#feebc8";
+          statusBos.style.color = "#c05621";
           return;
         }
 
-        if(idade < 16){
-          txtResultado.innerText = "Resultado: Não pode votar.";
-        }else if((idade >= 16 && idade <= 17) || idade >= 70){
-          txtResultado.innerText = "Resultado: Voto opcional.";
-        }else{
-          txtResultado.innerText = "Resultado: Voto Obrigatório!";
-        }
+        const taxaJuros = 0.02;
+        const jurosTotal = valor * taxaJuros * parcelas;
+        const valorTotal = valor + jurosTotal;
+        const valorParcela = valorTotal / parcelas;
 
+        txtTotal.innerText = `Valor total com juros: R$ ${valorTotal.toFixed(2)}`;
+        txtParcela.innerText = `Valor da parcela (${parcelas}x): R$ ${valorParcela.toFixed(2)}`;
+
+        const limiteComprometimento = renda * 0.30;
+
+        if(valorParcela <= limiteComprometimento){
+          statusBox.innerText = "Empréstimo APROVADO!";
+          statusBox.style.backgroundColor = "#c6f6d5";
+          statusBos.style.color = "#742a2a";
+        }
       }
 
-      btnVerificar.addEventListener("click", verificarVoto);
-      
+      btnCalcular.addEventListener("click", calcularEmprestimo);
 
   </script>
-  
+
 </body>
 </html>
