@@ -8,40 +8,22 @@
 </head>
 <body>
 
-    <h2>Operações Matemáticas Rápidas</h2>
-    
-    <input type="number" id="campoNum" placeholder="Digite um número">
+    <h2>Simulador de Imposto por Categoria</h2>
+
+    <input type="text" id="campoNome" placeholder="Nome do produto">
+    <br><br>
+    <input type="number" id="campoPreco" placeholder="Preço base (R$)">
     <br><br>
 
-    <button id="btnDobro">Calcular Dobro</button>
-    <button id="btnMetade">Calcular Metade</button>
-    <button id="btnQuadrado">Calcular Quadrado</button>
+    <button id="btnAlimentos">Alimento (5% Imposto)</button>
+    <button id="btnEletronicos">Eletrônico (15% Imposto)</button>
+    <button id="btnLuxo">Luxo (30% Imposto)</button>
 
     <h3 id="txtResultado">Resultado: -</h3>
 
 <script>
 
-    const dobro = n => n * 2;
-    const metade = n => n / 2;
-    const quadrado = n => n * n;
-
-    const campoNum = document.getElementById("campoNum");
-    const txtResultado = document.getElementById("txtResultado");
-
-    document.getElementById("btnDobro").addEventListener("click", () => {
-      const num = Number(campoNum.value);
-      txtResultado.innerText = `O dobro é ${dobro(num)}`;
-    });
-
-    document.getElementById("btnMetade").addEventListener("click", () => {
-      const num = Number(campoNum.value);
-      txtResultado.innerText = `A metade é ${metade(num)}`;
-    });
-
-    document.getElementById("btnQuadrado").addEventListener("click", () => {
-      const num = Number(campoNum.value);
-      txtResultado.innerText = `O quadrado é ${quadrado(num)}`;
-    });
+    
 
 </script>
 </body>
