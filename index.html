@@ -22,7 +22,33 @@
 
 <script>
 
-    
+    const campoCelsius = document.getElementById("campoCelsius");
+    const btnTradicional = document.getElementById("btnTradicional");
+    const btnArrow = document.getElementById("btnArrow");
+    const txtResultado = document.getElementById("txtResultado");
+
+    function converterComTradicional(){
+      const celsius = Number(campoCelsius.value);
+      if(campoCelsius.value === ""){
+        txtResultado.innerText = "Digite um valor válido!";
+        return;
+      }
+      const fahrenheit = (celsius * 9 / 5) + 32;
+      txtResultado.innerText = `[Tradicional] ${celsius}°C = ${fahrenheit.toFixed(1)}°F`;
+    }
+
+    const converterComArrow = () => {
+      const celsius = Number(campoCelsius.value);
+      if(campoCelsius.value === ""){
+        txtResultado.innerText = "Digite um valor válido!";
+        return;
+      }
+      const fahrenheit = (celsius * 9 / 5) + 32;
+      txtResultado.innerText = `[Arrow Function] ${celsius}°C = ${fahrenheit.toFixed(1)}°F`;
+    };
+
+    btnTradicional.addEventListener("click", converterComTradicional);
+    btnArrow.addEventListener("click", converterComArrow);
 
 </script>
 </body>
