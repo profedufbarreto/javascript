@@ -8,47 +8,40 @@
 </head>
 <body>
 
-    <h2>Conversor de Celsius para Fahrenheit</h2>
-
-    <input type="number" name="campoCelsius" id="campoCelsius" placeholder="Temperatura em °C">
+    <h2>Operações Matemáticas Rápidas</h2>
+    
+    <input type="number" id="campoNum" placeholder="Digite um número">
     <br><br>
 
-    <button id="btnTradicional">Converter (Função Normal)</button>
-
-    <button id="btnArrow">Converter (arrow function)</button>
+    <button id="btnDobro">Calcular Dobro</button>
+    <button id="btnMetade">Calcular Metade</button>
+    <button id="btnQuadrado">Calcular Quadrado</button>
 
     <h3 id="txtResultado">Resultado: -</h3>
-  
 
 <script>
 
-    const campoCelsius = document.getElementById("campoCelsius");
-    const btnTradicional = document.getElementById("btnTradicional");
-    const btnArrow = document.getElementById("btnArrow");
+    const dobro = n => n * 2;
+    const metade = n => n / 2;
+    const quadrado = n => n * n;
+
+    const campoNum = document.getElementById("campoNum");
     const txtResultado = document.getElementById("txtResultado");
 
-    function converterComTradicional(){
-      const celsius = Number(campoCelsius.value);
-      if(campoCelsius.value === ""){
-        txtResultado.innerText = "Digite um valor válido!";
-        return;
-      }
-      const fahrenheit = (celsius * 9 / 5) + 32;
-      txtResultado.innerText = `[Tradicional] ${celsius}°C = ${fahrenheit.toFixed(1)}°F`;
-    }
+    document.getElementById("btnDobro").addEventListener("click", () => {
+      const num = Number(campoNum.value);
+      txtResultado.innerText = `O dobro é ${dobro(num)}`;
+    });
 
-    const converterComArrow = () => {
-      const celsius = Number(campoCelsius.value);
-      if(campoCelsius.value === ""){
-        txtResultado.innerText = "Digite um valor válido!";
-        return;
-      }
-      const fahrenheit = (celsius * 9 / 5) + 32;
-      txtResultado.innerText = `[Arrow Function] ${celsius}°C = ${fahrenheit.toFixed(1)}°F`;
-    };
+    document.getElementById("btnMetade").addEventListener("click", () => {
+      const num = Number(campoNum.value);
+      txtResultado.innerText = `A metade é ${metade(num)}`;
+    });
 
-    btnTradicional.addEventListener("click", converterComTradicional);
-    btnArrow.addEventListener("click", converterComArrow);
+    document.getElementById("btnQuadrado").addEventListener("click", () => {
+      const num = Number(campoNum.value);
+      txtResultado.innerText = `O quadrado é ${quadrado(num)}`;
+    });
 
 </script>
 </body>
