@@ -3,46 +3,70 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="index.css">
-  <title>Simulador de Empréstimo</title>
+    <link rel="stylesheet" href="index.css">
+  <title>Avaliação de Aluno (POO)</title>
+
 </head>
 <body>
 
-  <h2>Cadastrar Produto</h2>
+  <div class="card-container">
+    <h2>Avaliação de Aluno</h2>
 
-  <input type="text" id="inputNome" placeholder="Nome do Produto">
-  <br><br>
-  <input type="number" id="inputPreco" placeholder="Preço (R$)">
-  <br><br>
+    <div class="grupo-input">
+      <label for="campoNome">Nome do Aluno</label>
+      <input type="text" id="campoNome" placeholder="Ex: Eduardo">
+    </div>
 
-  <button id="btnSalvar">Salvar Produto</button>
+    <div class="grupo-input">
+      <label for="campoNota">Nota (0 a 10)</label>
+      <input type="number" id="campoNota" min="0" max="10" placeholder="Ex: 8.5">
+    </div>
 
-  <h3 id="resultado">Nenhum produto cadastrado.</h3>
+    <div class="grupo-botoes">
+      <button id="btnAvaliar">Avaliar Aluno</button>
+    </div>
 
-<script>
-   
-      const inputNome = document.getElementById("inputNome");
-      const inputPreco = document.getElementById("inputPreco");
-      const btnSalvar = document.getElementById("btnSalvar");
-      const resultado = document.getElementById("resultado");
+    <div class="resultado-box">
+      <h3 id="txtResultado">Resultado: -</h3>
+    </div>
+  </div>
 
-      function salvarProduto(){
-        const produto = {
-          nome: inputNome.value,
-          preco: Number(inputPreco.value)
-        };
-
-        if(produto.nome === "" || produto.preco <= 0){
-          resultado.innerText = "Preencha os dados corretamente!";
-          return;
-        }
-
-        resultado.innerText = `Produto: ${produto.nome} | Preço: R$ ${produto.preco.toFixed(2)}`;
+  <script>
+    class Aluno {
+      constructor(nome, nota) {
+        this.nome = nome;
+        this.nota = nota;
       }
 
-      btnSalvar.addEventListener("click", salvarProduto);
+      obterStatus() {
+        if (this.nota >= 7) {
+          return `${this.nome} foi APROVADO(A)!`;
+        } else {
+          return `${this.nome} foi REPROVADO(A).`;
+        }
+      }
+    }
 
-</script>
+    const campoNome = document.getElementById("campoNome");
+    const campoNota = document.getElementById("campoNota");
+    const btnAvaliar = document.getElementById("btnAvaliar");
+    const txtResultado = document.getElementById("txtResultado");
+
+    function processar() {
+      const nome = campoNome.value;
+      const nota = Number(campoNota.value);
+
+      if (nome === "" || campoNota.value === "") {
+        txtResultado.innerText = "Preencha todos os campos!";
+        return;
+      }
+
+      const aluno = new Aluno(nome, nota);
+      txtResultado.innerText = aluno.obterStatus();
+    }
+
+    btnAvaliar.addEventListener("click", processar);
+  </script>
 
 </body>
 </html>
