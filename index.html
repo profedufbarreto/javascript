@@ -3,70 +3,73 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="index.css">
   <title>Avaliação de Aluno (POO)</title>
 
 </head>
 <body>
 
-  <div class="card-container">
-    <h2>Avaliação de Aluno</h2>
+    <h2>Conta Bancária Simples</h2>
 
-    <div class="grupo-input">
-      <label for="campoNome">Nome do Aluno</label>
-      <input type="text" id="campoNome" placeholder="Ex: Eduardo">
-    </div>
+    <h3 id="txtSaldo">Saldo Atual: R$ 0.00</h3>
 
-    <div class="grupo-input">
-      <label for="campoNota">Nota (0 a 10)</label>
-      <input type="number" id="campoNota" min="0" max="10" placeholder="Ex: 8.5">
-    </div>
+    <input type="number" id="campoValor" placeholder="Valor (R$)">
+    <br><br>
 
-    <div class="grupo-botoes">
-      <button id="btnAvaliar">Avaliar Aluno</button>
-    </div>
+    <button id="btnDepositar">Depositar</button>
+    <button id="btnSacar">Sacar</button>
 
-    <div class="resultado-box">
-      <h3 id="txtResultado">Resultado: -</h3>
-    </div>
-  </div>
+    <p id="txtMensagem"></p>
+  
 
-  <script>
-    class Aluno {
-      constructor(nome, nota) {
-        this.nome = nome;
-        this.nota = nota;
+<script>
+
+    class ContaBancaria{
+      constructor(saldoInicial){
+        this.saldo = saldoInicial;
       }
 
-      obterStatus() {
-        if (this.nota >= 7) {
-          return `${this.nome} foi APROVADO(A)!`;
-        } else {
-          return `${this.nome} foi REPROVADO(A).`;
-        }
+      depositar(valor){
+        if(valor <= 0) return "Valor de deposíto inválido!";
+        this.saldo += valor;
+        return `Depósito de R$ ${valor.toFixed(2)} realizado!`;
+      }
+
+      sacar(valor){
+        if(valor <= 0) return "Valor de saque inválido!";
+        if(valor > this.saldo) return "Saldo insuficiente!";
+        this.saldo -= valor;
+        return `Saque de R$ ${valor.toFixed(2)} realizado!`;
       }
     }
 
-    const campoNome = document.getElementById("campoNome");
-    const campoNota = document.getElementById("campoNota");
-    const btnAvaliar = document.getElementById("btnAvaliar");
-    const txtResultado = document.getElementById("txtResultado");
+    const minhaConta = new ContaBancaria(100);
 
-    function processar() {
-      const nome = campoNome.value;
-      const nota = Number(campoNota.value);
+    const txtSaldo = document.getElementById("txtSaldo");
+    const campoValor = document.getElementById("campoValor");
+    const btnDepositar = document.getElementById("btnDepositar");
+    const btnSacar = document.getElementById("btnSacar");
+    const txtMensagem = document.getElementById("txtMensagem");
 
-      if (nome === "" || campoNota.value === "") {
-        txtResultado.innerText = "Preencha todos os campos!";
-        return;
-      }
+    txtSaldo.innerText = `Saldo Atual: R$ ${minhaConta.saldo.toFixed(2)}`;
 
-      const aluno = new Aluno(nome, nota);
-      txtResultado.innerText = aluno.obterStatus();
-    }
+    btnDepositar.addEventListener("click", () => {
+      const valor = Number(campoValor.value);
+      const mensagem = minhaConta.depositar(valor);
 
-    btnAvaliar.addEventListener("click", processar);
-  </script>
+      txtMensagem.innerText = mensagem;
+      txtSaldo.innerText = `Saldo Atual: R$ ${minhaConta.saldo.toFixed(2)}`;
+      campoValor.value = "";
+    });
 
+    btnSacar.addEventListener("click", () => {
+      const valor = Number(campoValor.value);
+      const mensagem = minhaConta.sacar(valor);
+
+      txtMensagem.innerText = mensagem;
+      txtSaldo.innerText = `Saldo Atual: R$ ${minhaConta.saldo.toFixed(2)}`;
+      campoValor.value = "";
+    });
+
+</script>
 </body>
 </html>
