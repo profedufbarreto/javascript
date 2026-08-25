@@ -8,31 +8,25 @@
 </head>
 <body>
 
-    <h2>Ajuste de Tamanho</h2>
+    <h3>Teste com nome</h3>
 
-    <input type="number" id="campoTamanho" placeholder="Digite um tamanho (ex: 30)">
-    <button id="btnAplicar">Aplicar Tamanho</button>
+    <input type="text" id="name" placeholder="Digite o nome...">
+    <button id="btnName">Name</button>
 
-    <h3 id="txtTexto">Esse texto vai mudar de tamanho!</h3>
+    <h4 id="txtName">Seu nome é: </h4>
 
 <script>
 
-    const campoTamanho = document.getElementById("campoTamanho");
-    const btnAplicar = document.getElementById("btnAplicar");
-    const txtTexto = document.getElementById("txtTexto");
+    const name = document.getElementById("name");
+    const btnName = document.getElementById("btnName");
+    const txtName = document.getElementById("txtName");
 
-      const alterarTamanho = () => {
-        const tamanho = campoTamanho.value;
+    const exibirNome = () => {
+      txtName.innerText = `Seu nome é: ${name.value}`;
+    }
 
-        if(tamanho === "" || tamanho <= 0){
-          alert("Digite um número válido!");
-          return;
-        }
+    btnName.addEventListener("click", exibirNome);
 
-        txtTexto.style.fontSize = `${tamanho}px`;
-      };
-
-      btnAplicar.addEventListener("click", alterarTamanho);
 
 </script>
 </body>
