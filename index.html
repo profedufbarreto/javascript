@@ -8,27 +8,25 @@
 </head>
 <body>
 
-    <h2>Monitor de Texto em tempo real</h2>
+    <h2>Troca de cor</h2>
 
-    <label for="campo-texto">Digite seu nome: </label>
-    <input type="text" id="campo-texto" placeholder="Digite algo..">
+    <input type="text" name="campoCor" id="campoCor" placeholder="Ex: red, blue, green, #ff0000">
+    <button id="btnMudar">Mudar Cor</button>
 
-    <h3 id="txt-preview">Você está digitando: -</h3>
+    <h3 id="txtCaixa">Texto que vai mudar de cor!</h3>
 
 <script>
 
-    const campoTexto = document.querySelector("#campo-texto");
-    const txtPreview = document.querySelector("#txt-preview");
+    const campoCor = document.getElementById("campoCor");
+    const btnMudar = document.getElementById("btnMudar");
+    const txtCaixa = document.getElementById("txtCaixa");
 
-    campoTexto.addEventListener("input", () => {
-      const valor = campoTexto.value;
+    const alterarCor = () => {
+      const corDigitada = campoCor.value;
+      txtCaixa.style.color = corDigitada;
+    };
 
-      if(valor.trim() === ""){
-        txtPreview.innerText = "Você está digitando: -";
-      }else{
-        txtPreview.innerText = `Você está digitando: ${valor}`;
-      }
-    });
+    btnMudar.addEventListener("click", alterarCor);
 
 </script>
 </body>
