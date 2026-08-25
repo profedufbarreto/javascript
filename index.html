@@ -8,25 +8,33 @@
 </head>
 <body>
 
-    <h3>Teste com nome</h3>
+    <h3>Brincando um pouco!</h3>
 
-    <input type="text" id="name" placeholder="Digite o nome...">
-    <button id="btnName">Name</button>
+    <input type="text" id="campoNome" placeholder="Digite seu nome aqui..">
+    <br><br>
+    <input type="text" id="campoSobrenome" placeholder="Digite seu sobrenome aqui..">
+    <br><br>
+    <button id="btnConcatenar">Concatenar</button>
 
-    <h4 id="txtName">Seu nome é: </h4>
+    <h3 id="nomeCompleto">Seu nome é: </h3>
 
 <script>
 
-    const name = document.getElementById("name");
-    const btnName = document.getElementById("btnName");
-    const txtName = document.getElementById("txtName");
+    const campoNome = document.getElementById("campoNome");
+    const campoSobrenome = document.getElementById("campoSobrenome");
+    const btnConcatenar = document.getElementById("btnConcatenar");
+    const nomeCompleto = document.getElementById("nomeCompleto");
 
-    const exibirNome = () => {
-      txtName.innerText = `Seu nome é: ${name.value}`;
+    function concatenar(){
+      const nome = campoNome.value;
+      const sobrenome = campoSobrenome.value;
+
+      const resultado = `Seu nome é: ${nome} ${sobrenome}`;
+      
+      nomeCompleto.innerText = resultado;
     }
 
-    btnName.addEventListener("click", exibirNome);
-
+    btnConcatenar.addEventListener("click", concatenar);
 
 </script>
 </body>
