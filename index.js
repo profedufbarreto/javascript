@@ -1,11 +1,15 @@
-function dobrar(numero){
-    return numero * 2;
-}
+const campoPreco = document.getElementById("campoPreco");
+const campoQtd = document.getElementById("campoQtd");
+const btnCalcular = document.getElementById("btnCalcular");
+const txtResultado = document.getElementById("txtResultado");
 
-console.log(dobrar(4));
+    const calcularTotal = () => {
+        const preco = Number(campoPreco.value);
+        const quantidade = Number(campoQtd.value);
 
-let ehMaior(a, b){
-    console.log(a, b);
-}
+        const total = preco * quantidade;
 
-console.log(ehMaior(19, 4));
+        txtResultado.innerText = `Total: R$ ${total.toFixed(2)}`;
+    };
+
+    btnCalcular.addEventListener("click", calcularTotal);

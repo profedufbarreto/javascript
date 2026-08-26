@@ -8,34 +8,18 @@
 </head>
 <body>
 
-    <h3>Brincando um pouco!</h3>
+    <h2>Calculadora de Compra</h2>
 
-    <input type="text" id="campoNome" placeholder="Digite seu nome aqui..">
+    <input type="number" id="campoPreco" placeholder="Preço do Produto (R$)">
     <br><br>
-    <input type="text" id="campoSobrenome" placeholder="Digite seu sobrenome aqui..">
+
+    <input type="number" id="campoQtd" placeholder="Quantidade">
     <br><br>
-    <button id="btnConcatenar">Concatenar</button>
 
-    <h3 id="nomeCompleto">Seu nome é: </h3>
+    <button id="btnCalcular"Calcular Total>Calcular</button>
 
-<script>
+    <h3 id="txtResultado">Total: R$ 0.00</h3>
 
-    const campoNome = document.getElementById("campoNome");
-    const campoSobrenome = document.getElementById("campoSobrenome");
-    const btnConcatenar = document.getElementById("btnConcatenar");
-    const nomeCompleto = document.getElementById("nomeCompleto");
-
-    function concatenar(){
-      const nome = campoNome.value;
-      const sobrenome = campoSobrenome.value;
-
-      const resultado = `Seu nome é: ${nome} ${sobrenome}`;
-      
-      nomeCompleto.innerText = resultado;
-    }
-
-    btnConcatenar.addEventListener("click", concatenar);
-
-</script>
+<script src="index.js"></script>
 </body>
 </html>
