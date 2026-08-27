@@ -3,33 +3,33 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>JavaScript</title>
-
+  <title>JavaScritp</title>
 </head>
 <body>
   
-  <h1>Aula de JavaScript</h1>
+  <h1>Brincando com JavaScript</h1>
 
-
-  <script>
-
-      function exibirAprovados(listaAlunos){
-        listaAlunos.forEach(aluno => {
-          if(aluno.nota >= 7.0){
-            console.log(`${aluno.nome} foi aprovado(a) com nota ${aluno.nota}`);
-          }
-        });
-      }
-
-      const alunos = [
-        {nome: "Ana", nota: 8.5},
-        {nome: "Bruno", nota: 5.0},
-        {nome: "Carla", nota: 7.0}
-      ];
-
-      exibirAprovados(alunos);
-
-  </script>
+  <label for="campoNum1">Digite o primeiro Número:</label>
+  <br>
+  <input type="number" id="campoNum1" placeholder="Digite o número 1:">
+  <br>
+  <label for="campoNum2">Digite o segundo número:</label>
+  <br>
+  <input type="number" id="campoNum2" placeholder="Digite o número 2:">
+  <br>
+  <br>
   
+  <select name="select" id="select">Selecionar
+    <option value=""></option>
+    <option value="soma">Soma</option>
+    <option value="subtracao">Subtração</option>
+    <option value="multiplicacao">Multiplicação</option>
+    <option value="divisao">Divisão</option>
+  </select>
+
+  <h4 id="campoResultado">O resultado é: </h4>
+
+  <script src="index.js"></script>
+
 </body>
 </html>
