@@ -1,15 +1,15 @@
-const num1 = document.getElementById("num1") as HTMLInputElement;
-const num2 = document.getElementById("num2") as HTMLInputElement;
-const btnSomar = document.getElementById("btnSomar") as HTMLButtonElement;
-const resultado = document.getElementById("resultado") as HTMLHeadingElement;
+const campoNome = document.getElementById("campoNome") as HTMLInputElement;
+const campoSobrenome = document.getElementById("campoSobrenome") as HTMLInputElement
+const btnConcatenar = document.getElementById("btnConcatenar") as HTMLButtonElement;
+const campoTexto = document.getElementById("campoTexto") as HTMLHeadingElement;
 
-const somar = (): void => {
-    const n1: number = Number(num1.value);
-    const n2: number = Number(num2.value);
+    const concatenar = (): void =>{
+        const nome = campoNome.value;
+        const sobrenome = campoSobrenome.value;
 
-    const total: number = n1 + n2;
+        const frase = `Seja bem-vindo ${nome} ${sobrenome}!!`;
 
-    resultado.innerText = `Resultado: ${total}.`;
-};
+        campoTexto.innerText = frase;
+    }
 
-btnSomar.addEventListener("click", somar);
+    btnConcatenar.addEventListener("click", concatenar);
