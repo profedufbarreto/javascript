@@ -1,17 +1,30 @@
-const campoLogin = document.getElementById("campoLogin");
-const campoSenha = document.getElementById("campoSenha");
-const btnLogar = document.getElementById("btnLogar");
-const campoTexto = document.getElementById("campoTexto");
+const titulo = document.getElementById("titulo");
+const campoCor = document.getElementById("campoCor");
+const btnMudarCor = document.getElementById("btnMudarCor");
+const btnMudarFundo = document.getElementById("btnMudarFundo");
+const btnMudarPadding = document.getElementById("btnMudarPadding");
+const campoPadding = document.getElementById("campoPadding");
 
-    const autenticar = () => {
-        const login = campoLogin.value;
-        const senha = campoSenha.value;
+    const alterarCorTexto = () => {
+        const corDigitada = campoCor.value;
 
-        if(login === "dudu" && senha === "123456"){
-            campoTexto.innerText = `${login} efetuou seu login com sucesso!`;
-        }else{
-            campoTexto.innerText = "Usuário ou senha inválidos!";
-        }
+        titulo.style.color = corDigitada;
+    };
+
+    const padding = () => {
+        const qtdPadding = Number(campoPadding.value);
+        titulo.style.padding = `${qtdPadding}px`;
     }
 
-    btnLogar.addEventListener("click", autenticar);
+    function alterarCorFundo(){
+        const corDigitada = campoCor.value;
+
+        titulo.style.backgroundColor = corDigitada;
+        titulo.style.padding = "10px";
+    };
+
+
+
+    btnMudarCor.addEventListener("click", alterarCorTexto);
+    btnMudarFundo.addEventListener("click", alterarCorFundo);
+    btnMudarPadding.addEventListener("click", padding);
