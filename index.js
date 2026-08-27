@@ -1,34 +1,17 @@
-const diaDaSemana = document.getElementById("diaDaSemana");
-const opcao = diaDaSemana.value;
+const campoLogin = document.getElementById("campoLogin");
+const campoSenha = document.getElementById("campoSenha");
+const btnLogar = document.getElementById("btnLogar");
 const campoTexto = document.getElementById("campoTexto");
 
-    const dia = () => {
+    const autenticar = () => {
+        const login = campoLogin.value;
+        const senha = campoSenha.value;
 
-        switch(opcao){
-            case "domingo":
-                campoTexto.innerText = `Hoje é ${opcao}!`;
-                break;
-            case "segunda":
-                campoTexto.innerText = `Hoje é ${opcao}!`;
-                break;
-            case "terca":
-                campoTexto.innerText = `Hoje é ${opcao}!`;
-                break;
-            case "quarta":
-                campoTexto.innerText = `Hoje é ${opcao}!`;
-                break;
-            case "quinta":
-                campoTexto.innerText = `Hoje é ${opcao}!`;
-                break;
-            case "sexta":
-                campoTexto.innerText = `Hoje é ${opcao}!`;
-                break;
-            case "sabado":
-                campoTexto.innerText = `Hoje é ${opcao}!`;
-                break;
-            default:
-                campoTexto.innerText = "Opção inválida!";
+        if(login === "dudu" && senha === "123456"){
+            campoTexto.innerText = `${login} efetuou seu login com sucesso!`;
+        }else{
+            campoTexto.innerText = "Usuário ou senha inválidos!";
         }
     }
-    diaDaSemana.addEventListener("change", dia);
-    
+
+    btnLogar.addEventListener("click", autenticar);
