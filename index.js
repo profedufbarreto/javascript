@@ -1,41 +1,34 @@
-const campoNum1 = document.getElementById("campoNum1");
-const campoNum2 = document.getElementById("campoNum2");
-const select = document.getElementById("select");
-const campoResultado = document.getElementById("campoResultado");
+const diaDaSemana = document.getElementById("diaDaSemana");
+const opcao = diaDaSemana.value;
+const campoTexto = document.getElementById("campoTexto");
 
-    const calcular = () => {
-        const n1 = Number(campoNum1.value);
-        const n2 = Number(campoNum2.value);
-
-        const opcao = select.value;
+    const dia = () => {
 
         switch(opcao){
-            case 'soma':
-                const soma = n1 + n2;
-                campoResultado.innerText = `O resultado da soma é: ${soma}.`;
+            case "domingo":
+                campoTexto.innerText = `Hoje é ${opcao}!`;
                 break;
-            case 'subtracao':
-                const subtracao = n1 - n2;
-                campoResultado.innerText = `O resultado da subtração é: ${subtracao}.`;
+            case "segunda":
+                campoTexto.innerText = `Hoje é ${opcao}!`;
                 break;
-            case 'multiplicacao': 
-                const multiplicacao = n1 * n2;
-                campoResultado.innerText = `O resultado da multiplicação é: ${multiplicacao}.`;
-                break
-            case 'divisao':
-                if(n2 <= 0){
-                    campoResultado.innerText = "Não pode dividir por 0";
-                }else{
-                    const divisao = n1 / n2;
-                    campoResultado.innerText = `O resultado da divisão é: ${divisao}.`;
-                }
+            case "terca":
+                campoTexto.innerText = `Hoje é ${opcao}!`;
+                break;
+            case "quarta":
+                campoTexto.innerText = `Hoje é ${opcao}!`;
+                break;
+            case "quinta":
+                campoTexto.innerText = `Hoje é ${opcao}!`;
+                break;
+            case "sexta":
+                campoTexto.innerText = `Hoje é ${opcao}!`;
+                break;
+            case "sabado":
+                campoTexto.innerText = `Hoje é ${opcao}!`;
                 break;
             default:
-                campoResultado.innerText = "Opção inválida!";
-                
+                campoTexto.innerText = "Opção inválida!";
         }
     }
-
-select.addEventListener("change", calcular);
-
+    diaDaSemana.addEventListener("change", dia);
     
