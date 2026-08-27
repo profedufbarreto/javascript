@@ -7,16 +7,29 @@
 
 </head>
 <body>
+  
+  <h1>Aula de JavaScript</h1>
 
-    <h2>Funções</h2>
 
-    <input type="text" id="txtMensagem" placeholder="Digite a mensagem..">
-    <br><br>
+  <script>
 
-    <button id="btnGerar">Gerar Mensagem</button>
+      function exibirAprovados(listaAlunos){
+        listaAlunos.forEach(aluno => {
+          if(aluno.nota >= 7.0){
+            console.log(`${aluno.nome} foi aprovado(a) com nota ${aluno.nota}`);
+          }
+        });
+      }
 
-    <h4 id="txtResultado">...</h4>
+      const alunos = [
+        {nome: "Ana", nota: 8.5},
+        {nome: "Bruno", nota: 5.0},
+        {nome: "Carla", nota: 7.0}
+      ];
 
-<script src="index.js"></script>
+      exibirAprovados(alunos);
+
+  </script>
+  
 </body>
 </html>

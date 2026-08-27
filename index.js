@@ -1,11 +1,11 @@
-const txtMensagem = document.getElementById("txtMensagem");
-const btnGerar = document.getElementById("btnGerar");
-const txtRestultado = document.getElementById("txtResultado");
-
-
-const mensage = () => {
-    const texInput = txtMensagem.value; 
-    txtRestultado.innerText = `${texInput}`;
+function dobrar(numero){
+    return numero * 2;
 }
 
-btnGerar.addEventListener("click", mensage);
+console.log(dobrar(4));
+
+let ehMaior(a, b){
+    console.log(a, b);
+}
+
+console.log(ehMaior(19, 4));
