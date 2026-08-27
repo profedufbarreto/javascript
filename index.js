@@ -1,30 +1,15 @@
-const titulo = document.getElementById("titulo");
-const campoCor = document.getElementById("campoCor");
-const btnMudarCor = document.getElementById("btnMudarCor");
-const btnMudarFundo = document.getElementById("btnMudarFundo");
-const btnMudarPadding = document.getElementById("btnMudarPadding");
-const campoPadding = document.getElementById("campoPadding");
+const num1 = document.getElementById("num1");
+const num2 = document.getElementById("num2");
+const btnSomar = document.getElementById("btnSomar");
+const resultado = document.getElementById("resultado");
 
-    const alterarCorTexto = () => {
-        const corDigitada = campoCor.value;
+    const resolver = () =>{
+        const n1 = Number(num1.value);
+        const n2 = Number(num2.value);
 
-        titulo.style.color = corDigitada;
-    };
+        const soma = n1 + n2;
 
-    const padding = () => {
-        const qtdPadding = Number(campoPadding.value);
-        titulo.style.padding = `${qtdPadding}px`;
+        resultado.innerText = `O resultado é: ${soma}!`;
     }
 
-    function alterarCorFundo(){
-        const corDigitada = campoCor.value;
-
-        titulo.style.backgroundColor = corDigitada;
-        titulo.style.padding = "10px";
-    };
-
-
-
-    btnMudarCor.addEventListener("click", alterarCorTexto);
-    btnMudarFundo.addEventListener("click", alterarCorFundo);
-    btnMudarPadding.addEventListener("click", padding);
+    btnSomar.addEventListener("click", resolver);
