@@ -1,14 +1,13 @@
 "use strict";
-const campoTabuada = document.getElementById("campoTabuada");
-const btnTabuada = document.getElementById("btnTabuada");
+const campoNum = document.getElementById("campoNum");
+const btnImprimir = document.getElementById("btnImprimir");
 const campoResultado = document.getElementById("campoResultado");
-const resolver = () => {
-    const tab = Number(campoTabuada.value);
+const enquanto = () => {
+    const n = Number(campoNum.value);
     let resultadoFinal = "";
-    for (let i = 0; i <= 10; i++) {
-        const resposta = i * tab;
-        resultadoFinal += `${tab} x ${i} = ${resposta}\n`;
+    for (let i = n; i <= 10; i++) {
+        resultadoFinal += `${i} `;
     }
     campoResultado.innerText = resultadoFinal;
 };
-btnTabuada.addEventListener("click", resolver);
+btnImprimir.addEventListener("click", enquanto);
