@@ -1,15 +1,19 @@
-const campoNum1 = document.getElementById("campoNum1") as HTMLInputElement;
-const campoNum2 = document.getElementById("campoNum2") as HTMLInputElement;
-const btnCalcular = document.getElementById("btnCalcular") as HTMLButtonElement;
+const campoTabuada = document.getElementById("campoTabuada") as HTMLInputElement;
+const btnTabuada = document.getElementById("btnTabuada") as HTMLButtonElement;
 const campoResultado = document.getElementById("campoResultado") as HTMLHeadingElement;
 
-    const somar = (): void =>{
-        const num1 = Number(campoNum1.value);
-        const num2 = Number(campoNum2.value);
+    const resolver = (): void => {
+        const tab = Number(campoTabuada.value);
+        let resultadoFinal = "";
 
-        const soma = num1 + num2;
+        for(let i = 0; i <= 10; i++){
+            const resposta = i * tab;
+            
+            resultadoFinal += `${tab} x ${i} = ${resposta}\n`;
+        }
 
-        campoResultado.innerText = `O resultado é: ${soma}!!`;
+        campoResultado.innerText = resultadoFinal;
+        
     }
 
-    btnCalcular.addEventListener("click", somar);
+    btnTabuada.addEventListener("click", resolver);
