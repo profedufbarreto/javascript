@@ -1,33 +1,15 @@
-const campoAlterado = document.getElementById("campoAlterado") as HTMLHeadingElement;
-const campoInput = document.getElementById("campoInput") as HTMLInputElement;
-const btnAlterar = document.getElementById("btnAlterar") as HTMLButtonElement;
-const btnStandart = document.getElementById("btnStandart") as HTMLButtonElement;
+const campoIdade = document.getElementById("campoIdade") as HTMLInputElement;
+const btnCalcular = document.getElementById("btnCalcular") as HTMLButtonElement;
+const campoResultado = document.getElementById("campoResultado") as HTMLHeadingElement;
 
-const textoInicial = campoAlterado.innerText;
+    const maiorIdade = ():void => {
+        const idade = Number(campoIdade.value);
 
-    const standart = (): void => {
-        campoAlterado.style.color = "";
-        campoAlterado.style.backgroundColor = "";
-        campoAlterado.style.padding = "";
-        campoAlterado.style.border = "";
-        campoAlterado.style.borderRadius = "";
-
-        campoAlterado.innerText = textoInicial;
-        campoInput.value = "";
-    };
-
-    const alterar = (): void => {
-        if(campoInput.value.trim() !== ""){
-            campoAlterado.innerText = campoInput.value;
+        if(idade >= 18){
+            campoResultado.innerText = `Você tem ${idade} anos e é maior de idade!`;
+        }else{
+            campoResultado.innerText = `Você tem ${idade} anos e é menor de idade!`;
         }
-
-        campoAlterado.style.color = "#ffffff";
-        campoAlterado.style.backgroundColor = "#2b5278";
-        campoAlterado.style.padding = "15px";
-        campoAlterado.style.border = "5px solid #000000";
-        campoAlterado.style.borderRadius = "8px";
-        campoAlterado.style.textAlign = "center";
     };
 
-    btnAlterar.addEventListener("click", alterar);
-    btnStandart.addEventListener("click", standart);
+    btnCalcular.addEventListener("click", maiorIdade);
