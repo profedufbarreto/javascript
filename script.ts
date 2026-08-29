@@ -1,17 +1,15 @@
-const campoNum = document.getElementById("campoNum") as HTMLInputElement;
-const btnImprimir = document.getElementById("btnImprimir") as HTMLButtonElement;
-const campoResultado = document.getElementById("campoResultado") as HTMLParagraphElement;
+const campoNum1 = document.getElementById("campoNum1") as HTMLInputElement;
+const campoNum2 = document.getElementById("campoNum2") as HTMLInputElement;
+const btnMultiplicar = document.getElementById("btnMultiplicar") as HTMLButtonElement;
+const campoResultado = document.getElementById("campoResultado") as HTMLHeadingElement;
 
-    const enquanto = (): void => {
-        const n = Number(campoNum.value);
-        let resultadoFinal = "";
+    const resolver = (): void => {
+        const n1 = Number(campoNum1.value);
+        const n2 = Number(campoNum2.value);
 
-        for(let i = n; i <= 10; i++){
-            resultadoFinal += `${i} `;
-        }
+        const multiplicar = n1 * n2;
 
-        campoResultado.innerText = resultadoFinal;
-
+        campoResultado.innerText = `O resultado de ${n1} x ${n2} é: ${multiplicar}.`;
     }
 
-    btnImprimir.addEventListener("click", enquanto);
+btnMultiplicar.addEventListener("click", resolver);

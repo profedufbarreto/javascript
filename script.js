@@ -1,13 +1,12 @@
 "use strict";
-const campoNum = document.getElementById("campoNum");
-const btnImprimir = document.getElementById("btnImprimir");
+const campoNum1 = document.getElementById("campoNum1");
+const campoNum2 = document.getElementById("campoNum2");
+const btnMultiplicar = document.getElementById("btnMultiplicar");
 const campoResultado = document.getElementById("campoResultado");
-const enquanto = () => {
-    const n = Number(campoNum.value);
-    let resultadoFinal = "";
-    for (let i = n; i <= 10; i++) {
-        resultadoFinal += `${i} `;
-    }
-    campoResultado.innerText = resultadoFinal;
+const resolver = () => {
+    const n1 = Number(campoNum1.value);
+    const n2 = Number(campoNum2.value);
+    const multiplicar = n1 * n2;
+    campoResultado.innerText = `O resultado de ${n1} x ${n2} é: ${multiplicar}.`;
 };
-btnImprimir.addEventListener("click", enquanto);
+btnMultiplicar.addEventListener("click", resolver);
