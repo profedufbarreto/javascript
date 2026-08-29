@@ -1,12 +1,15 @@
 "use strict";
-const campoNum1 = document.getElementById("campoNum1");
-const campoNum2 = document.getElementById("campoNum2");
-const btnMultiplicar = document.getElementById("btnMultiplicar");
-const campoResultado = document.getElementById("campoResultado");
-const resolver = () => {
-    const n1 = Number(campoNum1.value);
-    const n2 = Number(campoNum2.value);
-    const multiplicar = n1 * n2;
-    campoResultado.innerText = `O resultado de ${n1} x ${n2} é: ${multiplicar}.`;
+const campoAlterado = document.getElementById("campoAlterado");
+const campoInput = document.getElementById("campoInput");
+const btnAlterar = document.getElementById("btnAlterar");
+const alterar = () => {
+    if (campoInput.value.trim() !== "") {
+        campoAlterado.innerText = campoInput.value;
+    }
+    campoAlterado.style.color = "#ffffff";
+    campoAlterado.style.backgroundColor = "#2b5278";
+    campoAlterado.style.padding = "15px";
+    campoAlterado.style.border = "2px solid #000000";
+    campoAlterado.style.borderRadius = "8px";
 };
-btnMultiplicar.addEventListener("click", resolver);
+btnAlterar.addEventListener("click", alterar);
