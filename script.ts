@@ -12,4 +12,4 @@ const alterar = (): void => {
     campoResultado.style.fontSize = "54px";
 }
 
-    btnClicar?.addEventListener("click", alterar);
+    btnClicar.addEventListener("click", alterar);
