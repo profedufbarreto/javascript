@@ -10,5 +10,11 @@ const alterar = () => {
     campoResultado.style.border = "3px solid black";
     campoResultado.style.padding = "50px";
     campoResultado.style.fontSize = "54px";
+    campoH2.style.backgroundColor = "blue";
+    campoH2.style.color = "white";
+    campoH2.style.padding = "50px";
+    campoH2.style.borderRadius = "45px";
+    campoH2.style.border = "3px solid black";
+    campoH2.style.fontSize = "36px";
 };
 btnClicar?.addEventListener("click", alterar);
