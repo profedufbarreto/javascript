@@ -1,20 +1,13 @@
 "use strict";
-const campoH1 = document.getElementById("campoH1");
-const campoH2 = document.getElementById("campoH2");
 const campoResultado = document.getElementById("campoResultado");
-const btnClicar = document.getElementById("btnClicar");
-const alterar = () => {
-    campoResultado.innerText = "Olá mundo!";
-    campoResultado.style.backgroundColor = "red";
-    campoResultado.style.color = "white";
-    campoResultado.style.border = "3px solid black";
-    campoResultado.style.padding = "50px";
-    campoResultado.style.fontSize = "54px";
-    campoH2.style.backgroundColor = "blue";
-    campoH2.style.color = "white";
-    campoH2.style.padding = "50px";
-    campoH2.style.borderRadius = "45px";
-    campoH2.style.border = "3px solid black";
-    campoH2.style.fontSize = "36px";
+const campoCor = document.getElementById("campoCor");
+const campoSize = document.getElementById("campoSize");
+const btnFormatar = document.getElementById("btnFormatar");
+const formatar = () => {
+    campoResultado.innerText = "Esse texto mudou";
+    const color = campoCor.value;
+    const size = Number(campoSize.value);
+    campoResultado.style.color = `${color}`;
+    campoResultado.style.fontSize = `${size}px`;
 };
-btnClicar?.addEventListener("click", alterar);
+btnFormatar.addEventListener("click", formatar);
