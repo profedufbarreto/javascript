@@ -13,4 +13,12 @@ const formatar = () => {
     campoResultado.style.borderRadius = "35px";
     campoResultado.style.textAlign = "center";
 };
+const repetir = () => {
+    let resultado = "";
+    for (let i = 0; i < 1000; i++) {
+        resultado += "\nNii, você é lindaaa!!! ";
+    }
+    campoResultado.innerText = resultado;
+};
 btnFormatar.addEventListener("click", formatar);
+btnFormatar.addEventListener("click", repetir);
